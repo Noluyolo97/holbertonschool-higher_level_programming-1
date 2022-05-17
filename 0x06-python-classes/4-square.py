@@ -1,50 +1,32 @@
 #!/usr/bin/python3
+
+
+"""Example Google style docstrings."""
+
+
 class Square:
-    """Square Class
-
-    A Square Class
-
-    """
+    """The summary line for a class docstring should fit on one line."""
 
     def __init__(self, size=0):
-        """__init__
-
-        The __init__ method initializes the size value of the square.
-
-        Attributes:
-            size (:obj:`int`, optional): The size of the square.
-
-        Raises:
-            TypeError: If `size` type is not `int`.
-
-            ValueError: If `size` is less than `0`.
-
-        """
-
-        if type(size) is not int:
-            raise TypeError('size must be an integer')
-
-        if size < 0:
-            raise ValueError('size must be >= 0')
-
+        """The summary line for a class docstring should fit on one line."""
         self.size = size
+
+    def area(self):
+        """The summary line for a class docstring should fit on one line."""
+        return (self._size * self._size)
 
     @property
     def size(self):
-        return self.__size
+        """The summary line for a class docstring should fit on one line."""
+        return self._size
 
     @size.setter
-    def size(self, size):
-        if type(size) is not int:
-            raise TypeError('size must be an integer')
-
-        if size < 0:
-            raise ValueError('size must be >= 0')
-
-        self.__size = size
-
-    def area(self):
-        """Returns the current square area
-
-        """
-        return self.__size ** 2
+    def size(self, value):
+        """The summary line for a class docstring should fit on one line."""
+        if type(value) == int:
+            if value >= 0:
+                self._size = value
+            else:
+                raise ValueError("size must be >= 0")
+        else:
+            raise TypeError("size must be an integer")

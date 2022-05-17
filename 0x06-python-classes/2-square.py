@@ -1,32 +1,45 @@
 #!/usr/bin/python3
-"""Square Class
 
-A Square Class
 
-"""
+"""Example Google style docstrings."""
 
 
 class Square:
+    """The summary line for a class docstring should fit on one line.
+
+    If the class has public attributes, they may be documented here
+    in an ``Attributes`` section and follow the same formatting as a
+    function's ``Args`` section. Alternatively, attributes may be documented
+    inline with the attribute's declaration (see __init__ method below).
+
+    Properties created with the ``@property`` decorator should be documented
+    in the property's getter method.
+
+    Attributes:
+        attr1 (str): Description of `attr1`.
+
+    """
 
     def __init__(self, size=0):
-        """__init__
+        """Example of docstring on the __init__ method.
 
-        The __init__ method initializes the size value of the square.
+        The __init__ method may be documented in either the class level
+        docstring, or as a docstring on the __init__ method itself.
 
-        Attributes:
-            size (:obj:`int`, optional): The size of the square.
+        Either form is acceptable, but the two should not be mixed. Choose one
+        convention to document the __init__ method and be consistent with it.
 
-        Raises:
-            TypeError: If `size` type is not `int`.
+        Note:
+            Do not include the `self` parameter in the ``Args`` section.
 
-            ValueError: If `size` is less than `0`.
+        Args:
+            param1 (size): Description of `size.
 
         """
-
-        if type(size) is not int:
-            raise TypeError('size must be an integer')
-
-        if size < 0:
-            raise ValueError('size must be >= 0')
-
-        self.__size = size
+        if type(size) != int:
+            raise TypeError("size must be an integer")
+        else:
+            if size < 0:
+                raise ValueError("size must be >= 0")
+            else:
+                self.__size = size
